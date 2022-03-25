@@ -25,6 +25,8 @@
   但是这样会存在两个问题: 1.我们只修改了个别的文件，没有必要检测所有的文件代码格式 2.它只能给我们提示出对应的错误，我们还需要手动的进行代码修改。
 - lint-staged:自动格式修复。`npm i lint-staged`只检查本次修改的代码，并在出现问题的时候，自动修复并且推送。
 - svg sprite icon
+- scss:`npm i sass`
+- element-plus:`npm install element-plus --save`或`vue add element-plus`
 
 ## 项目方案
 

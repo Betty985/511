@@ -4,7 +4,8 @@ import router from './router'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-
-let app = createApp(App)
+// 初始化样式表
+import './styles/index.scss'
+const app = createApp(App)
 app.use(store).use(ElementPlus).use(router)
 app.mount('#app')
