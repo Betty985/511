@@ -20,8 +20,10 @@
   - 运行 prepare 指令：`npm run prepare`
   - 添加 commitlint 的 hook 到 `husky `中，并在指令 commit-msg 的 hooks 下 执行`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`指令。[typicode.github.io](https://typicode.github.io/husky/#/)
 - commitlint：校验提交信息。`npm install --save-dev @commitlint/config-conventional @commitlint/cli`（npm 需要 7.x 以上）。然后`echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js`创建 commitlint.config.js 文件。
-- Pre-commit
-- lint-staged
+- Pre-commit：检测代码提交时的规范。eslint 和 prettier 只能解决本地的代码格式问题。通过`husky`检测`Pre-commit`钩子，在该钩子下执行**npx eslint --ext .js,.vue src**指令进行相关检测。命令为`npx husky add .husky/pre-commit "npx eslint --ext .js,.vue src"`。  
+  通过 pre-commit 处理了检测代码的提交规范问题， 当我们进行代码提交时，会检测所有的代码格式规范。
+  但是这样会存在两个问题: 1.我们只修改了个别的文件，没有必要检测所有的文件代码格式 2.它只能给我们提示出对应的错误，我们还需要手动的进行代码修改。
+- lint-staged:自动格式修复。`npm i lint-staged`只检查本次修改的代码，并在出现问题的时候，自动修复并且推送。
 - svg sprite icon
 
 ## 项目方案
@@ -91,8 +93,18 @@
 
 ## git 命令
 
-[推送到远程仓库](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8)
+### [推送到远程仓库](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8)
+
 当你想分享你的项目时，必须将其推送到上游。 这个命令很简单：`git push <remote> <branch>`。 当你想要将 master 分支推送到 origin 服务器时（再次说明，克隆时通常会自动帮你设置好那两个名字）， 那么运行这个命令就可以将你所做的备份到服务器：
 
 `$ git push origin master`
 只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时间克隆，他们先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。
+
+### [合并分支](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6)
+
+```js
+$ git checkout master
+Switched to branch 'master' $
+git merge iss53 Merge made by the 'recursive' strategy.
+$ git branch -d iss53
+```
