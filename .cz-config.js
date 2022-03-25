@@ -22,5 +22,7 @@ module.exports = {
     confirmCommit: '确认使用以上信息提交？(y/n)'
   },
   // 默认长度限制为72
-  subjectLimit: 72
+  subjectLimit: 72,
+  // 跳过步骤
+  skipQuestions: ['body', 'footer']
 }

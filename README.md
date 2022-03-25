@@ -10,8 +10,16 @@
 - prettier：开箱即用的代码格式化工具，可以直接集成到 vs code,保存时让代码直接符合 eslint `设置-输入save-勾选 format on save `。vs code 一个 tab 默认等于 4 个空格，而 eslint 希望一个 tab 等于 2 个空格。`设置-修改“Editor: Tab Size”为2`
 
 - commitizen:规范化提交代码。`git cz`代替`git commit`
-- husky
-- commitlint
+- [git hooks](https://git-scm.com/book/zh/v2/%E8%87%AA%E5%AE%9A%E4%B9%89-Git-Git-%E9%92%A9%E5%AD%90)：git 钩子。需要用到的是 pre-commit 钩子、commit-msg 钩子。可以通过 git commit --no --vertify 绕过
+  - pre-commit 钩子在键入提交信息前运行。 它用于检查即将提交的快照，例如，检查是否有所遗漏，确保测试运行，以及核查代码。 如果该钩子以非零值退出，Git 将放弃此次提交，不过你可以用 git commit --no-verify 来绕过这个环节。 你可以利用该钩子，来检查代码风格是否一致（运行类似 lint 的程序）、尾随空白字符是否存在（自带的钩子就是这么做的），或新方法的文档是否适当。
+  - commit-msg 钩子接收一个参数，此参数即上文提到的，存有当前提交信息的临时文件的路径。 如果该钩子脚本以非零值退出，Git 将放弃提交，因此，可以用来在提交通过前验证项目状态或提交信息。
+- husky：`git hooks`工具。
+  - 安装依赖 `npm install husky --save-dev`
+  - 启动 husky，生成.husky 文件夹。`npx husky install`
+  - 在 package.json 中生成`prepare`指令。`npm set-script prepare "husky install"`
+  - 运行 prepare 指令：`npm run prepare`
+  - 添加 commitlint 的 hook 到 `husky `中，并在指令 commit-msg 的 hooks 下 执行`npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'`指令。[typicode.github.io](https://typicode.github.io/husky/#/)
+- commitlint：校验提交信息。`npm install --save-dev @commitlint/config-conventional @commitlint/cli`（npm 需要 7.x 以上）。然后`echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js`创建 commitlint.config.js 文件。
 - Pre-commit
 - lint-staged
 - svg sprite icon
