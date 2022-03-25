@@ -12,8 +12,11 @@
     "commitlint": "^12.1.4",
     "core-js": "^3.6.5",
     "cz-customizable": "^6.3.0",
+    "element-plus": "^2.1.4",
     "lint-staged": "^12.3.7",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",

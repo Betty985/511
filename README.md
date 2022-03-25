@@ -85,6 +85,10 @@
 - 打包优化处理方案
 - 前端项目部署方案
 
+# element-plus
+
+安装`npm install element-plus --save `
+
 # git
 
 ## git 规范
