@@ -128,3 +128,7 @@ $ git branch -d iss53
   "exclude": ["node_modules"]
 }
 ```
+
+# 配置环境变量，封装 axios 模块
+
+根据当前模式不同，设置不同的 baseUrl
