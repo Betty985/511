@@ -6,6 +6,9 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 // 初始化样式表
 import './styles/index.scss'
+// 导入svgicon
+import installIcons from './icons'
 const app = createApp(App)
+installIcons(app)
 app.use(store).use(ElementPlus).use(router)
 app.mount('#app')
