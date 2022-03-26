@@ -38,8 +38,9 @@ const iconName = computed(() => `#icon-${props.icon}`)
     class="svg-external-icon svg-icon"
     :class="className"
   ></div>
+
   <!-- 展示内部图标 -->
-  <svg v-else :class="className" aria-hidden="true">
+  <svg v-else :class="className" class="svg-icon" aria-hidden="true">
     <use :href="iconName" />
   </svg>
 </template>
