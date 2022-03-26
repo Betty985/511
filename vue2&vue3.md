@@ -33,7 +33,14 @@ Vue 无法检测 property 的添加或移除。由于 Vue 会在初始化实例�
 
 ### vue3 的 proxy
 
-Object.defineProperty 和 Proxy 本质差别是，defineProperty 只能对属性进行劫持，所以出现了需要递归遍历，新增属性需要手动 Observe 的问题。Proxy 直接代理对象，不需要遍历操作。此外，Proxy 支持 13 种拦截操作
+Object.defineProperty 和 Proxy 本质差别是，defineProperty 只能对属性进行劫持，所以出现了需要递归遍历，新增属性需要手动 Observe 的问题。Proxy 直接代理对象，不需要遍历操作。此外，Proxy 支持 13 种拦截操作。
+
+#### vue3.2 的 ref
+
+更高效的 ref 实现(约 260%的读取速度的 50%的写入速度)
+依赖项跟踪速度提高约 40%
+内存使用量减少约 17%
+在应用层中最大的体现就是 ref 这个 API，性能得到了大幅度的提升。
 
 ## 新的 TS 支持
 

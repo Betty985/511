@@ -1,22 +1,51 @@
 <script setup>
 import svgIcon from './../../components/svgIcon/index.vue'
+import { ref } from 'vue'
+import { validatePassword } from './rules'
+// 数据源
+const loginForm = ref({
+  userName: 'super',
+  password: 123456,
+})
+// 验证规则
+const loginRules = ref({
+  userName: [
+    {
+      required: true,
+      trigger: 'blur',
+      message: '请填入用户名',
+    },
+  ],
+  password: [
+    {
+      required: true,
+      trigger: 'blur',
+      validator: validatePassword(),
+    },
+  ],
+})
 </script>
 
 <template>
   <div class="login-container">
-    <el-form class="login-form">
+    <el-form class="login-form" :model="loginForm" :rules="loginRules">
       <div class="title-container">
         <h3 class="title">用户登录</h3>
       </div>
       <!-- username -->
-      <el-form-item>
+      <el-form-item prop="userName">
         <span class="svg-container">
           <svg-icon icon="user"></svg-icon>
         </span>
-        <el-input placeholder="userName" name="userName" type="text"></el-input>
+        <el-input
+          placeholder="userName"
+          name="userName"
+          type="text"
+          v-model="loginForm.userName"
+        ></el-input>
       </el-form-item>
       <!-- password -->
-      <el-form-item>
+      <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon="password"></svg-icon>
         </span>
@@ -24,6 +53,7 @@ import svgIcon from './../../components/svgIcon/index.vue'
           placeholder="password"
           name="password"
           type="password"
+          v-model="loginForm.password"
         ></el-input>
         <span class="show-pwd">
           <span class="svg-container">
