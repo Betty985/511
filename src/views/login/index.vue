@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup>
+import svgIcon from './../../components/svgIcon/index.vue'
+</script>
 
 <template>
   <div class="login-container">
@@ -9,24 +11,9 @@
       <!-- username -->
       <el-form-item>
         <span class="svg-container">
-          <el-icon>
-            <svg
-              viewBox="0 0 1024 1024"
-              xmlns="http://www.w3.org/2000/svg"
-              data-v-ba633cb8=""
-            >
-              <path
-                fill="currentColor"
-                d="M628.736 528.896A416 416 0 0 1 928 928H96a415.872 415.872 0 0 1 299.264-399.104L512 704l116.736-175.104zM720 304a208 208 0 1 1-416 0 208 208 0 0 1 416 0z"
-              ></path>
-            </svg>
-          </el-icon>
-          <el-input
-            placeholder="userName"
-            name="userName"
-            type="text"
-          ></el-input>
+          <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon>
         </span>
+        <el-input placeholder="userName" name="userName" type="text"></el-input>
       </el-form-item>
       <!-- password -->
       <el-form-item>
@@ -84,7 +71,7 @@ $cursor: #fff;
     margin: 0 auto;
     overflow: hidden;
 
-    ::v-deep .el-form-item {
+    :deep(.el-form-item) {
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
