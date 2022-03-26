@@ -24,6 +24,15 @@ const loginRules = ref({
     },
   ],
 })
+// 密码框文本显示
+const passwordType = ref('password')
+function changePwdType() {
+  if (passwordType.value === 'password') {
+    passwordType.value = 'text'
+  } else {
+    passwordType.value = 'password'
+  }
+}
 </script>
 
 <template>
@@ -52,12 +61,14 @@ const loginRules = ref({
         <el-input
           placeholder="password"
           name="password"
-          type="password"
+          :type="passwordType"
           v-model="loginForm.password"
         ></el-input>
-        <span class="show-pwd">
+        <span class="show-pwd" @click="changePwdType">
           <span class="svg-container">
-            <svg-icon icon="eye"></svg-icon>
+            <svg-icon
+              :icon="passwordType === 'password' ? 'eye' : 'eye-open'"
+            ></svg-icon>
           </span>
         </span>
       </el-form-item>
@@ -161,7 +172,6 @@ $cursor: #fff;
   .show-pwd {
     position: absolute;
     right: 10px;
-    top: 7px;
     font-size: 16px;
     color: $dark_gray;
     cursor: pointer;
