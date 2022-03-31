@@ -24,7 +24,7 @@
   通过 pre-commit 处理了检测代码的提交规范问题， 当我们进行代码提交时，会检测所有的代码格式规范。
   但是这样会存在两个问题: 1.我们只修改了个别的文件，没有必要检测所有的文件代码格式 2.它只能给我们提示出对应的错误，我们还需要手动的进行代码修改。
 - lint-staged:自动格式修复。`npm i lint-staged`只检查本次修改的代码，并在出现问题的时候，自动修复并且推送。
-- svg sprite icon:`npm i svg-sprite-loader@6.0.9`
+- [svg sprite icon:](https://blog.csdn.net/sweet202005/article/details/123815616)`npm i svg-sprite-loader@6.0.9`
 - scss:`npm i sass`
 - element-plus:`npm install element-plus --save`或`vue add element-plus`
 

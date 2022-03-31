@@ -2,7 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@": ["./src"],
-      "@c": ["./src/components"]
+      "@c": ["./src/components"],
+      "@u": ["./src/utils"]
     }
   },
   "exclude": ["node_modules"]
