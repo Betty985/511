@@ -1,6 +1,7 @@
 import { login } from '@/api/sys'
 import md5 from 'md5'
 export default {
+  // 单独的模块
   namespaced: true,
   state: () => ({}),
   mutations: {},

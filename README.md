@@ -115,7 +115,7 @@ git merge iss53 Merge made by the 'recursive' strategy.
 $ git branch -d iss53
 ```
 
-# [路径别名](https://juejin.cn/post/7001002976479281166)
+# [路径别名](https://blog.csdn.net/panchang199266/article/details/90145638)
 
 ```json
 {

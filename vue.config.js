@@ -45,5 +45,10 @@ module.exports = {
       })
       // 结束
       .end()
+    // 路径别名
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('@u', resolve('src/utils'))
+      .set('@c', resolve('src/components'))
   },
 }
