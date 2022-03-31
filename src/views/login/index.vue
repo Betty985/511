@@ -40,11 +40,12 @@ const store = useStore()
 const LoginRef = ref(null)
 const handlerLogin = () => {
   // 进行表单校验
-  console.log(LoginRef.value)
+  // console.log(LoginRef.value)
   LoginRef.value.validate((valid) => {
     if (!valid) return
     // 触发登录动作
     loading.value = true
+    // 进行登录处理
     store
       .dispatch('user/login', loginForm.value)
       .then(() => {
@@ -55,8 +56,6 @@ const handlerLogin = () => {
         loading.value = false
       })
   })
-
-  // 进行登录处理
 }
 </script>
 
