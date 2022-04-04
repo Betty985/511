@@ -8,6 +8,8 @@ import 'element-plus/dist/index.css'
 import './styles/index.scss'
 // 导入svgicon
 import installIcons from './icons'
+// 导入路由守卫
+import './router/permission'
 const app = createApp(App)
 installIcons(app)
 app.use(store).use(ElementPlus).use(router)
