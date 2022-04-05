@@ -9,7 +9,6 @@ module.exports = {
     proxy: {
       // 当地址中包含"/api"时，触发代理
       '/api': {
-        // target: 'https://api.imooc-admin.lgdsunday.club',
         target:
           'https://www.fastmock.site/mock/c3dd630f99c340fa159ec877bd1cac57',
         // 跨域

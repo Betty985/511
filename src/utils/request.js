@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import store from '@/store'
+import { isTimeout } from './auth'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000,
@@ -10,6 +11,11 @@ service.interceptors.request.use(
   (config) => {
     // 统一注入token
     if (store.getters.token) {
+      if (isTimeout()) {
+        // 退出
+        store.dispatch('user/loginOut')
+        return Promise.reject(new Error('token过期'))
+      }
       config.headers.Authorization = `Bearer ${store.getters.token}`
     }
     return config
