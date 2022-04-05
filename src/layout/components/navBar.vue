@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup>
+import { useStore } from 'vuex'
+const store = useStore()
+const loginOut = () => {
+  store.dispatch('user/loginOut')
+  console.log(11)
+}
+</script>
 
 <template>
   <div class="navbar">
@@ -21,7 +28,9 @@
             <router-link to="/">
               <el-dropdown-item>个人中心</el-dropdown-item>
             </router-link>
-            <el-dropdown-item divided>退出登录</el-dropdown-item>
+            <el-dropdown-item divided @click="loginOut"
+              >退出登录</el-dropdown-item
+            >
           </el-dropdown-menu>
         </template>
       </el-dropdown>
