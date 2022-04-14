@@ -12,7 +12,8 @@
         <nav-bar />
       </div>
       <!-- 内容区 -->
-      <app-main />
+
+      <app-main> </app-main>
     </div>
   </div>
 </template>

@@ -1,7 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="app-main">appmain</div>
+  <router-view></router-view>
+  <h1>hi</h1>
 </template>
 
 <style scoped lang="scss">

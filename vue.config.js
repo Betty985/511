@@ -51,5 +51,6 @@ module.exports = {
       .set('@', resolve('src'))
       .set('@u', resolve('src/utils'))
       .set('@c', resolve('src/components'))
+      .set('@v', resolve('src/views'))
   },
 }
