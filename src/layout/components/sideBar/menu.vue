@@ -1,4 +1,17 @@
-<script setup></script>
+<script setup>
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { filterRouters, generateMenus } from '@/utils/route'
+
+const router = useRouter()
+// console.log(router.getRoutes())
+// 路由表的问题：存在重复的路由数据; 不满足该条件 `meta && meta.title && meta.icon` 的数据不应该存在
+const routes = computed(() => {
+  const filterRoutes = filterRouters(router.getRoutes())
+  return generateMenus(filterRoutes)
+})
+console.log(JSON.stringify(routes.value))
+</script>
 
 <template>
   <div>
