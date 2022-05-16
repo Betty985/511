@@ -9,5 +9,6 @@ const getters = {
   },
   userInfo: (state) => state.user.userInfo,
   cssVar: (state) => variables,
+  sidebarOpened: (state) => state.app.sidebarOpened,
 }
 export default getters

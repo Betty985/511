@@ -1,5 +1,6 @@
 <script setup>
 import { useStore } from 'vuex'
+import Hamhurger from '@c/hamburger/index.vue'
 const store = useStore()
 const loginOut = () => {
   store.dispatch('user/loginOut')
@@ -9,6 +10,8 @@ const loginOut = () => {
 
 <template>
   <div class="navbar">
+    <!-- 汉堡 -->
+    <Hamhurger></Hamhurger>
     <div class="right-menu">
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
