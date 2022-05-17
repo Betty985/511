@@ -1,17 +1,16 @@
 <script setup>
 import { useStore } from 'vuex'
-import Hamhurger from '@c/hamburger/index.vue'
+import Hamburger from '@c/hamburger/index.vue'
 const store = useStore()
 const loginOut = () => {
   store.dispatch('user/loginOut')
-  console.log(11)
 }
 </script>
 
 <template>
   <div class="navbar">
     <!-- 汉堡 -->
-    <Hamhurger></Hamhurger>
+    <Hamburger class="hamburger-container" />
     <div class="right-menu">
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -48,9 +47,13 @@ const loginOut = () => {
   position: relative;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  .hamburger-container {
+    float: left;
+  }
   .right-menu {
     display: flex;
     align-items: center;
+    float: right;
     padding-right: 1rem;
     ::v-deep .avatar-container {
       cursor: pointer;

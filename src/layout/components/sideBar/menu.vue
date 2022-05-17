@@ -21,7 +21,7 @@ const activeMenu = computed(() => {
 <template>
   <div>
     <el-menu
-      :collapse="!$store.getters.siderbarOpened"
+      :collapse="!$store.getters.sidebarOpened"
       :default-active="activeMenu"
       :unique-opened="true"
       :background-color="$store.getters.cssVar.menuBg"

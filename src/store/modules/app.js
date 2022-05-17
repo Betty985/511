@@ -1,5 +1,5 @@
 export default {
-  nameSpaced: true,
+  namespaced: true,
   state: () => ({
     sidebarOpened: true,
   }),

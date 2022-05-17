@@ -6,8 +6,9 @@ const store = useStore()
 const icon = computed(() => {
   return store.getters.sidebarOpened ? 'hamburger-opened' : 'hamburger-closed'
 })
+
 const toggleClick = () => {
-  store.commit('app/triggerSiderbarOpened')
+  store.commit('app/triggerSidebarOpened')
 }
 </script>
 
@@ -21,7 +22,6 @@ const toggleClick = () => {
 .hamburger-container {
   padding: 0 1rem;
   line-height: 2.875rem;
-  float: left;
   cursor: pointer;
   // hover 动画
   transition: background 0.5s;

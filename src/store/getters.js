@@ -1,5 +1,5 @@
 import variables from '@/styles/variable.scss'
-console.log(variables)
+
 // 快捷访问
 const getters = {
   token: (state) => state.user.token,
