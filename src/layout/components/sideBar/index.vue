@@ -1,12 +1,13 @@
 <script setup>
 import menuBar from './menu.vue'
+const logoHeight = 44
 </script>
 
 <template>
   <div class="navBar">
     <div class="logo-container">
       <el-avatar
-        size="44"
+        :size="logoHeight"
         shape="square"
         src="https://tse4-mm.cn.bing.net/th/id/OIP-C.s9iuByRkWL7rNkxe_gWYKgHaEK?w=305&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
       ></el-avatar>
@@ -20,7 +21,7 @@ import menuBar from './menu.vue'
 
 <style scoped lang="scss">
 .logo-container {
-  height: 44px;
+  height: v-bind(logoHeight) + 'px';
   padding: 10px 0 22px 0;
   display: flex;
   align-items: center;

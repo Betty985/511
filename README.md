@@ -173,3 +173,9 @@ $ git branch -d iss53
 # 配置环境变量，封装 axios 模块
 
 根据当前模式不同，设置不同的 baseUrl
+
+# css
+
+## [组件状态驱动的动态 CSS 值](https://staging-cn.vuejs.org/api/sfc-css-features.html#v-bind-in-css)
+
+单文件组件的 `<style>` 标签支持使用 `v-bind` CSS 函数将 CSS 的值链接到动态的组件状态
