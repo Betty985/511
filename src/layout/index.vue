@@ -15,7 +15,6 @@
         <nav-bar />
       </div>
       <!-- 内容区 -->
-
       <app-main> </app-main>
     </div>
   </div>
@@ -30,6 +29,7 @@ import variables from '@/styles/variable.scss'
 
 <style scoped lang="scss">
 @import '@/styles/mixin.scss';
+@import '@/styles/sideBar.scss';
 @import '@/styles/variable.scss';
 .app-wrapper {
   @include clearfix;

@@ -1,6 +1,7 @@
 <script setup>
 import { useStore } from 'vuex'
 import Hamburger from '@c/hamburger/index.vue'
+import Breadcrumb from '@c/breadcrumb/index.vue'
 const store = useStore()
 const loginOut = () => {
   store.dispatch('user/loginOut')
@@ -11,6 +12,8 @@ const loginOut = () => {
   <div class="navbar">
     <!-- 汉堡 -->
     <Hamburger class="hamburger-container" />
+    <!-- 面包屑 -->
+    <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -48,6 +51,9 @@ const loginOut = () => {
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .hamburger-container {
+    float: left;
+  }
+  .breadcrumb-container {
     float: left;
   }
   .right-menu {
