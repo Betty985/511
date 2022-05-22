@@ -12,7 +12,16 @@ import installIcons from '@/icons'
 import '@/router/permission'
 // 导入国际化插件
 import i18n from '@/locale'
+// element国际化
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+import en from 'element-plus/lib/locale/lang/en'
 const app = createApp(App)
 installIcons(app)
-app.use(store).use(ElementPlus).use(router).use(i18n)
+app
+  .use(store)
+  .use(ElementPlus, {
+    locale: store.getters.language === 'en' ? en : zhCn,
+  })
+  .use(router)
+  .use(i18n)
 app.mount('#app')
