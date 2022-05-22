@@ -9,7 +9,6 @@ const getBreadcrumbData = () => {
   breadcrumbData.value = route.matched.filter(
     (item) => item.meta && item.meta.title,
   )
-  console.log(breadcrumbData.value)
 }
 
 // 监听路由变化时触发
@@ -57,7 +56,7 @@ const linkHoverColor = ref(store.getters.cssVar.menuBg)
   font-size: 14px;
   line-height: 50px;
   margin-left: 8px;
-  ::v-deep .no-redirect {
+  .no-redirect {
     color: #97a8be;
     cursor: text;
   }

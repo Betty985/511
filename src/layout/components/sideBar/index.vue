@@ -11,7 +11,10 @@ const logoHeight = 44
         shape="square"
         src="https://tse4-mm.cn.bing.net/th/id/OIP-C.s9iuByRkWL7rNkxe_gWYKgHaEK?w=305&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
       ></el-avatar>
-      <h1 class="logo-title" v-if="$store.getters.sidebarOpened">511-admin</h1>
+      <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
+        {{ $t('msg.test') }}
+        511-admin
+      </h1>
     </div>
     <el-scrollbar>
       <menuBar></menuBar>
@@ -22,7 +25,7 @@ const logoHeight = 44
 <style scoped lang="scss">
 .logo-container {
   height: v-bind(logoHeight) + 'px';
-  padding: 10px 0 22px 0;
+  padding: 10px 0 6px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,9 +37,11 @@ const logoHeight = 44
     font-size: 16px;
     white-space: nowrap;
   }
+  // logo主体居中
   ::v-deep .el-avatar {
-    border: 3px red;
-    object-position: -24px 0px;
+    & img {
+      object-position: -19px 0px;
+    }
   }
 }
 </style>
