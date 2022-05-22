@@ -3,3 +3,5 @@ export const TOKEN = 'token'
 export const TIME_STAMP = 'timestamp'
 // 超时时长
 export const TOKEN_TIMEOUT = 2 * 3600 * 1000
+// 语言
+export const LANGUAGE = 'language'

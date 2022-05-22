@@ -5,11 +5,13 @@ const messages = {
   en: {
     msg: {
       test: 'hello world',
+      languageChanged: 'Language changed to English',
     },
   },
   zh: {
     msg: {
       test: '你好世界',
+      languageChanged: '语言切换为中文',
     },
   },
 }
