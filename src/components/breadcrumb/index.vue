@@ -32,23 +32,26 @@ const linkHoverColor = ref(store.getters.cssVar.menuBg)
 
 <template>
   <el-breadcrumb class="breadcrumb" separator="/">
-    <el-breadcrumb-item
-      v-for="(item, index) in breadcrumbData"
-      :key="item.path"
-    >
-      <!-- 不可点击项 -->
-      <span v-if="index === breadcrumbData.length - 1" class="no-redirect"
-        >{{ item.meta.title }}
-      </span>
-      <!-- 可点击项 -->
-      <a v-else class="redirect" @click.prevent="onLinkClick(item)">{{
-        item.meta.title
-      }}</a>
-    </el-breadcrumb-item>
+    <transition-group name="breadcrumb">
+      <el-breadcrumb-item
+        v-for="(item, index) in breadcrumbData"
+        :key="item.path"
+      >
+        <!-- 不可点击项 -->
+        <span v-if="index === breadcrumbData.length - 1" class="no-redirect"
+          >{{ item.meta.title }}
+        </span>
+        <!-- 可点击项 -->
+        <a v-else class="redirect" @click.prevent="onLinkClick(item)">{{
+          item.meta.title
+        }}</a>
+      </el-breadcrumb-item>
+    </transition-group>
   </el-breadcrumb>
 </template>
 
 <style scoped lang="scss">
+@import '@/styles/transition.scss';
 .breadcrumb {
   display: inline-block;
   font-size: 14px;
