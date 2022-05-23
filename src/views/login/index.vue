@@ -68,7 +68,7 @@ const handlerLogin = () => {
       ref="LoginRef"
     >
       <div class="title-container">
-        <h3 class="title">用户登录</h3>
+        <h3 class="title">{{ $t('login.title') }}</h3>
       </div>
       <!-- username -->
       <el-form-item prop="userName">

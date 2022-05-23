@@ -25,6 +25,7 @@ const toggleClick = () => {
   cursor: pointer;
   // hover 动画
   transition: background 0.5s;
+  float: left;
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }

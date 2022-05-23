@@ -1,5 +1,7 @@
 // 初始化i18n实例
 import { createI18n } from 'vue-i18n'
+import ZH from './lang/zh'
+import EN from './lang/en'
 // 数据源
 const messages = {
   en: {
@@ -7,12 +9,14 @@ const messages = {
       test: 'hello world',
       languageChanged: 'Language changed to English',
     },
+    ...EN,
   },
   zh: {
     msg: {
       test: '你好世界',
       languageChanged: '语言切换为中文',
     },
+    ...ZH,
   },
 }
 // 语言变量

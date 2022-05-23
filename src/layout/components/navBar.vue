@@ -12,7 +12,7 @@ const loginOut = () => {
 <template>
   <div class="navbar">
     <!-- 汉堡 -->
-    <Hamburger class="hamburger-container" />
+    <Hamburger />
     <!-- 面包屑 -->
     <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
@@ -56,9 +56,7 @@ const loginOut = () => {
   .hamburger-container {
     float: left;
   }
-  .breadcrumb-container {
-    float: left;
-  }
+
   .right-menu {
     display: flex;
     align-items: center;
