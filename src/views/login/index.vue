@@ -1,8 +1,11 @@
 <script setup>
-import svgIcon from './../../components/svgIcon/index.vue'
+import svgIcon from '@/components/svgIcon/index.vue'
+import langSelect from '@/components/languageSelect/index.vue'
 import { ref } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
+import { useI18n } from 'vue-i18n'
+const i18n = useI18n()
 // 数据源
 const loginForm = ref({
   userName: 'super',
@@ -14,7 +17,7 @@ const loginRules = ref({
     {
       required: true,
       trigger: 'blur',
-      message: '请填入用户名',
+      message: i18n.t('login.usernameRule'),
     },
   ],
   password: [
@@ -69,6 +72,7 @@ const handlerLogin = () => {
     >
       <div class="title-container">
         <h3 class="title">{{ $t('login.title') }}</h3>
+        <lang-select class="lang-select" effect="light"></lang-select>
       </div>
       <!-- username -->
       <el-form-item prop="userName">
@@ -107,8 +111,9 @@ const handlerLogin = () => {
         style="width: 100%; margin-bottom: 30px"
         :loading="loading"
         @click="handlerLogin"
-        >登录</el-button
+        >{{ $t('login.loginBtn') }}</el-button
       >
+      <div class="tips" v-html="$t('login.desc')"></div>
     </el-form>
   </div>
 </template>

@@ -15,6 +15,7 @@ import i18n from '@/locale'
 // element国际化
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/lib/locale/lang/en'
+import { MotionPlugin } from '@vueuse/motion'
 const app = createApp(App)
 installIcons(app)
 app
@@ -24,4 +25,5 @@ app
   })
   .use(router)
   .use(i18n)
+  .use(MotionPlugin)
 app.mount('#app')
