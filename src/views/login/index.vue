@@ -1,10 +1,12 @@
 <script setup>
 import svgIcon from '@/components/svgIcon/index.vue'
 import langSelect from '@/components/languageSelect/index.vue'
+import motion from '@/components/motion/index.vue'
 import { ref } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
 import { useI18n } from 'vue-i18n'
+
 const i18n = useI18n()
 // 数据源
 const loginForm = ref({
@@ -75,43 +77,49 @@ const handlerLogin = () => {
         <lang-select class="lang-select" effect="light"></lang-select>
       </div>
       <!-- username -->
-      <el-form-item prop="userName">
-        <span class="svg-container">
-          <svg-icon icon="user"></svg-icon>
-        </span>
-        <el-input
-          placeholder="userName"
-          name="userName"
-          type="text"
-          v-model="loginForm.userName"
-        ></el-input>
-      </el-form-item>
-      <!-- password -->
-      <el-form-item prop="password">
-        <span class="svg-container">
-          <svg-icon icon="password"></svg-icon>
-        </span>
-        <el-input
-          placeholder="password"
-          name="password"
-          :type="passwordType"
-          v-model="loginForm.password"
-        ></el-input>
-        <span class="show-pwd" @click="changePwdType">
+      <motion
+        ><el-form-item prop="userName">
           <span class="svg-container">
-            <svg-icon
-              :icon="passwordType === 'password' ? 'eye' : 'eye-open'"
-            ></svg-icon>
+            <svg-icon icon="user"></svg-icon>
           </span>
-        </span>
-      </el-form-item>
+          <el-input
+            placeholder="userName"
+            name="userName"
+            type="text"
+            v-model="loginForm.userName"
+          ></el-input> </el-form-item
+      ></motion>
+
+      <!-- password -->
+      <motion :delay="200"
+        ><el-form-item prop="password">
+          <span class="svg-container">
+            <svg-icon icon="password"></svg-icon>
+          </span>
+          <el-input
+            placeholder="password"
+            name="password"
+            :type="passwordType"
+            v-model="loginForm.password"
+          ></el-input>
+          <span class="show-pwd" @click="changePwdType">
+            <span class="svg-container">
+              <svg-icon
+                :icon="passwordType === 'password' ? 'eye' : 'eye-open'"
+              ></svg-icon>
+            </span>
+          </span> </el-form-item
+      ></motion>
+
       <!-- 登录按钮 -->
-      <el-button
-        type="primary"
-        style="width: 100%; margin-bottom: 30px"
-        :loading="loading"
-        @click="handlerLogin"
-        >{{ $t('login.loginBtn') }}</el-button
+      <motion :delay="300"
+        ><el-button
+          type="primary"
+          style="width: 100%; margin-bottom: 30px"
+          :loading="loading"
+          @click="handlerLogin"
+          >{{ $t('login.loginBtn') }}</el-button
+        ></motion
       >
       <div class="tips" v-html="$t('login.desc')"></div>
     </el-form>
