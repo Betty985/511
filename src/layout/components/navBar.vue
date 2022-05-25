@@ -34,7 +34,7 @@ const loginOut = () => {
               <el-dropdown-item>{{ $t('navBar.home') }}</el-dropdown-item>
             </router-link>
             <router-link to="/">
-              <el-dropdown-item>{{ $t('navBar.personal') }}</el-dropdown-item>
+              <el-dropdown-item>{{ $t('navBar.profile') }}</el-dropdown-item>
             </router-link>
             <el-dropdown-item divided @click="loginOut">{{
               $t('navBar.logout')

@@ -18,11 +18,10 @@ import en from 'element-plus/lib/locale/lang/en'
 import { MotionPlugin } from '@vueuse/motion'
 const app = createApp(App)
 installIcons(app)
-
-app.use(store)
 // 不刷新切换element的语言
 const locale = computed(() => (store.getters.language === 'en' ? en : zhCn))
 app
+  .use(store)
   .use(ElementPlus, {
     locale,
   })
