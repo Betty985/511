@@ -12,8 +12,7 @@ const logoHeight = 44
         src="https://tse4-mm.cn.bing.net/th/id/OIP-C.s9iuByRkWL7rNkxe_gWYKgHaEK?w=305&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
       ></el-avatar>
       <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
-        {{ $t('msg.test') }}
-        511-admin
+        {{ $t('msg.name') }}
       </h1>
     </div>
     <el-scrollbar>
@@ -33,6 +32,7 @@ const logoHeight = 44
     margin-left: 10px;
     color: #fff;
     font-weight: 600;
+    width: 100px;
     line-height: 50px;
     font-size: 16px;
     white-space: nowrap;

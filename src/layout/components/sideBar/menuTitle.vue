@@ -1,6 +1,7 @@
 <script setup>
 // 处理el-menu-item 的样式
 import { defineProps } from 'vue'
+import { generateTitle } from '@/utils/i18n.js'
 defineProps({
   title: {
     type: String,
@@ -19,7 +20,7 @@ defineProps({
   <!-- 外部icon -->
   <svg-icon v-else :icon="icon"></svg-icon>
   <!-- 文本 -->
-  <span>{{ title }}</span>
+  <span>{{ generateTitle(title) }}</span>
 </template>
 
 <style scoped lang="scss"></style>

@@ -6,14 +6,14 @@ import EN from './lang/en'
 const messages = {
   en: {
     msg: {
-      test: 'hello world',
+      name: '511 admin',
       languageChanged: 'Language changed to English',
     },
     ...EN,
   },
   zh: {
     msg: {
-      test: '你好世界',
+      name: '511 系统',
       languageChanged: '语言切换为中文',
     },
     ...ZH,

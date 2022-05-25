@@ -55,7 +55,7 @@ export default {
     lang: 'Globalization',
     guide: 'Function Guide',
     home: 'Home',
-    course: 'Course homepage',
+    personal: 'Personal Center',
     logout: 'Log out',
   },
   guide: {

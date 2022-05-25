@@ -31,14 +31,14 @@ const loginOut = () => {
         <template #dropdown>
           <el-dropdown-menu class="user-dropdown">
             <router-link to="/">
-              <el-dropdown-item>主页</el-dropdown-item>
+              <el-dropdown-item>{{ $t('navBar.home') }}</el-dropdown-item>
             </router-link>
             <router-link to="/">
-              <el-dropdown-item>个人中心</el-dropdown-item>
+              <el-dropdown-item>{{ $t('navBar.personal') }}</el-dropdown-item>
             </router-link>
-            <el-dropdown-item divided @click="loginOut"
-              >退出登录</el-dropdown-item
-            >
+            <el-dropdown-item divided @click="loginOut">{{
+              $t('navBar.logout')
+            }}</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

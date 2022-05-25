@@ -30,7 +30,11 @@ const handleSetLanguage = (lang) => {
     class="international"
     @command="handleSetLanguage"
   >
-    <el-tooltip content="国际化" :effect="effect" placement="bottom">
+    <el-tooltip
+      :content="$t('navBar.lang')"
+      :effect="effect"
+      placement="bottom"
+    >
       <div>
         <svg-icon icon="language" />
       </div>
