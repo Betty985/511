@@ -1,4 +1,4 @@
-import i18n from '@/locale'
+import i18n from '@/i18n'
 export const validatePassword = () => {
   return (rule, value, callback) => {
     if (value.length < 6) {

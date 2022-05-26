@@ -11,7 +11,7 @@ import installIcons from '@/icons'
 // 导入路由守卫
 import '@/router/permission'
 // 导入国际化插件
-import i18n from '@/locale'
+import i18n from '@/i18n'
 // element国际化
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/lib/locale/lang/en'

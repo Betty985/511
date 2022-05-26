@@ -1,12 +1,12 @@
 // 初始化i18n实例
-import store from '@/store'
-import router from '@/router'
+
 import { createI18n } from 'vue-i18n'
 import ZH from './lang/zh'
 import EN from './lang/en'
+import store from '@/store'
+
 // 返回当前lang
-const getLang = () => store?.getters?.language
-console.log('hi', store, router, getLang())
+const getLang = () => store?.getters?.language || 'en'
 // 数据源
 const messages = {
   en: {
@@ -24,13 +24,13 @@ const messages = {
     ...ZH,
   },
 }
-const locale = 'zh'
+// const locale = 'zh'
 const i18n = createI18n({
   // 使用composition Api需要设置为false
   legacy: false,
   // 全局注入t函数
   globalInjection: true,
-  locale,
+  locale: getLang(),
   messages,
 })
 

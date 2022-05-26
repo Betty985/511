@@ -3,6 +3,7 @@ import { useStore } from 'vuex'
 import Hamburger from '@c/hamburger/index.vue'
 import Breadcrumb from '@c/breadcrumb/index.vue'
 import LanguageSelect from '@/components/languageSelect/index.vue'
+import ThemePicker from '@/components/themeSelect/index.vue'
 const store = useStore()
 const loginOut = () => {
   store.dispatch('user/loginOut')
@@ -16,6 +17,7 @@ const loginOut = () => {
     <!-- 面包屑 -->
     <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <theme-picker class="right-menu-item hover-effect"></theme-picker>
       <!-- 语言选择 -->
       <LanguageSelect class="right-menu-item hover-effect" />
       <!-- 头像 -->
