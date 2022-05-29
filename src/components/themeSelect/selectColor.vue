@@ -1,6 +1,7 @@
 <script setup>
 import { defineProps, defineEmits, ref } from 'vue'
 import { useStore } from 'vuex'
+import { writeNewStyle, generateNewStyle } from '@/utils/theme'
 const store = useStore()
 defineProps({
   modelValue: {
@@ -34,6 +35,11 @@ const closed = () => {
 }
 //  确定
 const comfirm = async () => {
+  // 获取主题色
+  const newStyleText = await generateNewStyle(defaultColor.value)
+  //  写入最新主题色
+  console.log(writeNewStyle)
+  writeNewStyle(newStyleText)
   //  保存最新的主题色
   store.commit('theme/setMainColor', defaultColor.value)
   // 关闭 dialog

@@ -6,7 +6,8 @@ import EN from './lang/en'
 import store from '@/store'
 
 // 返回当前lang
-const getLang = () => store?.getters?.language || 'en'
+const getLang = () => store?.getters?.language
+
 // 数据源
 const messages = {
   en: {
