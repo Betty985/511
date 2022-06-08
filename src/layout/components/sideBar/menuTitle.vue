@@ -1,6 +1,5 @@
 <script setup>
 // 处理el-menu-item 的样式
-import { defineProps } from 'vue'
 import { generateTitle } from '@/utils/i18n.js'
 defineProps({
   title: {

@@ -2,7 +2,7 @@
 import { useI18n } from 'vue-i18n'
 import { ElMessage } from 'element-plus'
 import { useStore } from 'vuex'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 defineProps({
   effect: {
     type: String,

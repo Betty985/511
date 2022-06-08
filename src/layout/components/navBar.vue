@@ -17,7 +17,7 @@ const loginOut = () => {
     <!-- 面包屑 -->
     <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
-      <theme-picker class="right-menu-item hover-effect"></theme-picker>
+      <theme-picker class="right-menu-item hover-effect" />
       <!-- 语言选择 -->
       <LanguageSelect class="right-menu-item hover-effect" />
       <!-- 头像 -->

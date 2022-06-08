@@ -1,6 +1,5 @@
 <script setup>
 // 根据当前数据处理当前项为 el-submenu||el-menu-item
-import { defineProps } from 'vue'
 import menuTitle from './menuTitle.vue'
 defineProps({
   route: {

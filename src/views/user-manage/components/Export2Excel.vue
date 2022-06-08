@@ -22,7 +22,7 @@
 
 <script setup>
 import { getUserManageAllList } from '@/api/user-manage'
-import { defineProps, defineEmits, ref } from 'vue'
+import { defineEmits, ref } from 'vue'
 import { watchSwitchLang } from '@/utils/i18n'
 import { useI18n } from 'vue-i18n'
 import { USER_RELATIONS } from './Export2ExcelConstants'
@@ -31,8 +31,8 @@ import { dateFormat } from '@/utils/date'
 defineProps({
   modelValue: {
     type: Boolean,
-    required: true
-  }
+    required: true,
+  },
 })
 const emits = defineEmits(['update:modelValue'])
 
@@ -65,7 +65,7 @@ const onConfirm = async () => {
     // 是否自动列宽
     autoWidth: true,
     // 文件类型
-    bookType: 'xlsx'
+    bookType: 'xlsx',
   })
   closed()
 }
@@ -74,8 +74,8 @@ const onConfirm = async () => {
 const formatJson = (headers, rows) => {
   // 首先遍历数组
   // [{ username: '张三'},{},{}]  => [[’张三'],[],[]]
-  return rows.map(item => {
-    return Object.keys(headers).map(key => {
+  return rows.map((item) => {
+    return Object.keys(headers).map((key) => {
       // 时间特殊处理
       if (headers[key] === 'openTime') {
         return dateFormat(item[headers[key]])
@@ -84,7 +84,7 @@ const formatJson = (headers, rows) => {
       if (headers[key] === 'role') {
         const roles = item[headers[key]]
 
-        return JSON.stringify(roles.map(role => role.title))
+        return JSON.stringify(roles.map((role) => role.title))
       }
       return item[headers[key]]
     })

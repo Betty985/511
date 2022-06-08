@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits, ref, watch } from 'vue'
+import { defineEmits, ref, watch } from 'vue'
 import { roleList } from '@/api/role'
 import { watchSwitchLang } from '@/utils/i18n'
 import { userRoles, updateRole } from '@/api/user-manage'
@@ -34,12 +34,12 @@ import { useI18n } from 'vue-i18n'
 const props = defineProps({
   modelValue: {
     type: Boolean,
-    required: true
+    required: true,
   },
   userId: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const emits = defineEmits(['update:modelValue', 'updateRole'])
@@ -59,13 +59,13 @@ const userRoleTitleList = ref([])
 // 获取当前用户角色
 const getUserRoles = async () => {
   const res = await userRoles(props.userId)
-  userRoleTitleList.value = res.role.map(item => item.title)
+  userRoleTitleList.value = res.role.map((item) => item.title)
 }
 watch(
   () => props.userId,
-  val => {
+  (val) => {
     if (val) getUserRoles()
-  }
+  },
 )
 
 /**
@@ -74,8 +74,8 @@ watch(
 const i18n = useI18n()
 const onConfirm = async () => {
   // 处理数据结构
-  const roles = userRoleTitleList.value.map(title => {
-    return allRoleList.value.find(role => role.title === title)
+  const roles = userRoleTitleList.value.map((title) => {
+    return allRoleList.value.find((role) => role.title === title)
   })
 
   await updateRole(props.userId, roles)
