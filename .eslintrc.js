@@ -27,5 +27,6 @@ module.exports = {
     'space-before-function-paren': 'off',
     // 多余的逗号
     'comma-dangle': 'off',
+    'no-undef': 'off',
   },
 }

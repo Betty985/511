@@ -16,13 +16,44 @@ onMounted(() => {
 </script>
 
 <template>
-  <Layout
-    class="w-full"
-    :option="{ xs: '24', sm: '12', md: '6', lg: '6', xl: '6' }"
-  >
-    <PCard :height="172" v-for="(item, index) in data" :key="index">
-      {{ item.name }}
-    </PCard>
+  <Layout class="w-full">
+    <el-col
+      class="mb-18"
+      :xs="24"
+      :sm="12"
+      :md="6"
+      :lg="6"
+      :xl="6"
+      v-for="(item, index) in data"
+      :key="index"
+    >
+      <PCard :height="172">
+        {{ item.name }}
+      </PCard>
+    </el-col>
+  </Layout>
+
+  <Layout class="mb-18 w-full">
+    <el-col>
+      <PCard :height="487"> </PCard>
+    </el-col>
+  </Layout>
+
+  <Layout class="mb-18 w-full">
+    <el-col
+      class="mb-18"
+      :xs="24"
+      :sm="8"
+      :md="8"
+      :lg="8"
+      :xl="8"
+      v-for="(item, index) in 3"
+      :key="index"
+    >
+      <PCard :height="300">
+        {{ item }}
+      </PCard>
+    </el-col>
   </Layout>
 </template>
 
