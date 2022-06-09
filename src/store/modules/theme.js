@@ -9,6 +9,7 @@ export default {
     // 设置主题色
     setMainColor(state, newColor) {
       state.mainColor = newColor
+      state.variables.menuBg = newColor
       setItem(MAIN_COLOR, newColor)
     },
   },
