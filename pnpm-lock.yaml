@@ -36,7 +36,7 @@ specifiers:
   rgb-hex: ^4.0.0
   sass: ^1.26.5
   sass-loader: ^8.0.2
-  screenfull: ^5.1.0
+  screenfull: 5.1.0
   sortablejs: ^1.14.0
   svg-sprite-loader: ^6.0.9
   vue: ^3.2.8
@@ -63,7 +63,7 @@ dependencies:
   md5: 2.3.0
   only-allow: 1.1.0
   rgb-hex: 4.0.0
-  screenfull: 5.2.0
+  screenfull: 5.1.0
   sortablejs: 1.15.0
   vue: 3.2.36
   vue-i18n: 9.1.10_vue@3.2.36
@@ -9270,8 +9270,8 @@ packages:
       ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
 
-  /screenfull/5.2.0:
-    resolution: {integrity: sha512-9BakfsO2aUQN2K9Fdbj87RJIEZ82Q9IGim7FqM5OsebfoFC6ZHXgDq/KvniuLTPdeM8wY2o6Dj3WQ7KeQCj3cA==}
+  /screenfull/5.1.0:
+    resolution: {integrity: sha512-dYaNuOdzr+kc6J6CFcBrzkLCfyGcMg+gWkJ8us93IQ7y1cevhQAugFsaCdMHb6lw8KV3xPzSxzH7zM1dQap9mA==}
     engines: {node: '>=0.10.0'}
     dev: false
 
