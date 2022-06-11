@@ -12,12 +12,10 @@ defineProps({
 
 <template>
   <div @click="toggle">
-    <el-tooltip
-      :content="$t('navBar.screenfull')"
-      :effect="effect"
-      placement="bottom"
-    >
-      <svg-icon :icon="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
+    <el-tooltip :content="$t('navBar.screenfull')">
+      <div>
+        <svg-icon :icon="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" />
+      </div>
     </el-tooltip>
   </div>
 </template>
