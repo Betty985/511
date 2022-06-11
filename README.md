@@ -104,11 +104,16 @@ token 表示了一个用户的身份令牌。为了保证用户的信息安全�
   - 组件 `ThemeSelect` 用来处理修改之后的 `css 变量` 的值，根据新值修改主题色
   - 组件`SelectColor`用来选择颜色
   - element-plus 主题变更：获取当前所有样式，通过正则替换需要替换的样式，把新样式写入 style 标签。
-- 全屏处理方案
-- 页面检索处理方案
+- 全屏处理方案。`vueuse`的全屏函数
+- 页面检索处理方案。
+  1.  创建 `headerSearch` 组件，用作样式展示和用户输入内容获取
+  2.  获取所有的页面数据，用作被检索的数据源
+  3.  根据用户输入内容在数据源中进行 [模糊搜索](https://fusejs.io/)
+  4.  把搜索到的内容以 `select` 进行展示
+  5.  监听 `select` 的 `change` 事件，完成对应跳转
 - TagsView 处理方案
 - 功能引导处理方案
-- 多组件
+- 多组件。[基于路由的动态过渡](https://router.vuejs.org/zh/guide/advanced/transitions.html#%E5%9F%BA%E4%BA%8E%E8%B7%AF%E7%94%B1%E7%9A%84%E5%8A%A8%E6%80%81%E8%BF%87%E6%B8%A1)
 
 ### 数据注入导出
 

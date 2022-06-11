@@ -1,6 +1,7 @@
+@import './variable.scss';
 .breadcrumb-enter-active,
 .breadcrumb-leave-active {
-  transition: all 0.5s;
+  transition: all #{$sideBarDuration};
 }
 .breadcrumb-enter-from,
 .breadcrumb-leave-active {
@@ -9,4 +10,18 @@
 }
 .breadcrumb-leave-active {
   position: absolute;
+}
+// fade-transform
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+  transition: all #{$sideBarDuration};
+}
+.fade-transform-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
