@@ -31,7 +31,7 @@ const i18n = createI18n({
   legacy: false,
   // 全局注入t函数
   globalInjection: true,
-  locale: getLang(),
+  locale: getLang() || 'zh',
   messages,
 })
 
