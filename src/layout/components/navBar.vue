@@ -6,6 +6,7 @@ import {
   Breadcrumb,
   LanguageSelect,
   ThemePicker,
+  headerSearch,
 } from '@c'
 const store = useStore()
 const loginOut = () => {
@@ -20,8 +21,11 @@ const loginOut = () => {
     <!-- 面包屑 -->
     <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <!-- 搜索 -->
+      <headerSearch class="right-menu-item hover-effect" />
       <!-- 全屏 -->
       <screenfull class="right-menu-item hover-effect" />
+      <!-- 换肤 -->
       <theme-picker class="right-menu-item hover-effect" />
       <!-- 语言选择 -->
       <LanguageSelect class="right-menu-item hover-effect" />
