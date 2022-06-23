@@ -28,7 +28,7 @@ specifiers:
   eslint-plugin-standard: ^4.0.0
   eslint-plugin-vue: ^7.0.0
   file-saver: ^2.0.5
-  fuse.js: ^6.4.6
+  fuse.js: 6.4.6
   husky: ^7.0.1
   i18next: ^20.4.0
   lint-staged: ^9.5.0
@@ -59,7 +59,7 @@ dependencies:
   driver.js: 0.9.8
   element-plus: 1.1.0-beta.23_vue@3.2.36
   file-saver: 2.0.5
-  fuse.js: 6.6.2
+  fuse.js: 6.4.6
   i18next: 20.6.1
   md5: 2.3.0
   only-allow: 1.1.0
@@ -5603,8 +5603,8 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
 
-  /fuse.js/6.6.2:
-    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+  /fuse.js/6.4.6:
+    resolution: {integrity: sha512-/gYxR/0VpXmWSfZOIPS3rWwU8SHgsRTwWuXhyb2O6s7aRuVtHtxCkR33bNYu3wyLyNx/Wpv0vU7FZy8Vj53VNw==}
     engines: {node: '>=10'}
     dev: false
 
