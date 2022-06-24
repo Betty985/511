@@ -14,13 +14,19 @@ const onShowClick = () => {
 }
 // search框的值
 const search = ref('')
+// 搜索结果
+const searchOptions = ref([])
 // 搜索方法
-const querySearch = () => {
-  console.log(fuse.search(query))
+const querySearch = (query) => {
+  if (query !== '') {
+    searchOptions.value = fuse.search(query)
+  } else {
+    searchOptions.value = []
+  }
 }
 // 选中回调
-const onSelectChange = () => {
-  console.log('选中')
+const onSelectChange = (val) => {
+  router.push(val.path)
 }
 // 检索数据源
 const router = useRouter()
@@ -71,10 +77,10 @@ const fuse = new Fuse(searchPool.value, {
         :remote-method="querySearch"
         @change="onSelectChange"
         ><el-option
-          v-for="option in 5"
-          :key="option"
-          :label="option"
-          :value="option"
+          v-for="option in searchOptions"
+          :key="option.item.path"
+          :label="option.item.title.join('>')"
+          :value="option.item"
         ></el-option>
       </el-select>
     </div>
